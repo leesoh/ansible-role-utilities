@@ -1,0 +1,22 @@
+---
+- name: Install vim
+  when: ansible_os_family == "Debian"
+  apt:
+    update_cache: yes
+    state: latest
+    name: vim
+ 
+- name: Install curl
+  when: ansible_os_family == "Debian"
+  apt:
+    update_cache: yes
+    state: latest
+    name: curl
+
+- name: Install zsh
+  when: ansible_os_family == "Debian"
+  apt:
+    update_cache: yes
+    state: latest
+    name: zsh
+
