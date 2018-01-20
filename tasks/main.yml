@@ -1,5 +1,6 @@
 ---
 - name: Install vim
+  become: true
   when: ansible_os_family == "Debian"
   apt:
     update_cache: yes
@@ -7,6 +8,7 @@
     name: vim
  
 - name: Install curl
+  become: true
   when: ansible_os_family == "Debian"
   apt:
     update_cache: yes
@@ -14,6 +16,7 @@
     name: curl
 
 - name: Install zsh
+  become: true
   when: ansible_os_family == "Debian"
   apt:
     update_cache: yes
