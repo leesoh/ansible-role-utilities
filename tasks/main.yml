@@ -23,3 +23,10 @@
     state: latest
     name: zsh
 
+- name: Install OpenVPN
+  become: true
+  when: ansible_os_family == "Debian"
+  apt:
+    update_cache: yes
+    state: latest
+    name: openvpn
