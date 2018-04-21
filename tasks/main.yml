@@ -37,4 +37,4 @@
   apt:
     update_cache: yes
     state: latest
-    name: network-manager-openvpn
+    name: network-manager-openvpn-gnome
