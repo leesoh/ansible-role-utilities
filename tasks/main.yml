@@ -1,9 +1,13 @@
 ---
+- name: Update apt cache
+  become: true
+  apt:
+    update_cache: yes
+
 - name: Install vim
   become: true
   when: ansible_os_family == "Debian"
   apt:
-    update_cache: yes
     state: latest
     name: vim
 
@@ -11,7 +15,6 @@
   become: true
   when: ansible_os_family == "Debian"
   apt:
-    update_cache: yes
     state: latest
     name: curl
 
@@ -19,7 +22,6 @@
   become: true
   when: ansible_os_family == "Debian"
   apt:
-    update_cache: yes
     state: latest
     name: zsh
 
@@ -27,7 +29,6 @@
   become: true
   when: ansible_os_family == "Debian"
   apt:
-    update_cache: yes
     state: latest
     name: openvpn
 
@@ -35,6 +36,5 @@
   become: true
   when: ansible_distribution == "Ubuntu"
   apt:
-    update_cache: yes
     state: latest
     name: network-manager-openvpn-gnome
