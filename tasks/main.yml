@@ -18,12 +18,12 @@
     state: latest
     name: curl
 
-- name: Install zsh
-  become: true
-  when: ansible_os_family == "Debian"
-  apt:
-    state: latest
-    name: zsh
+# - name: Install zsh
+#   become: true
+#   when: ansible_os_family == "Debian"
+#   apt:
+#     state: latest
+#     name: zsh
 
 - name: Install OpenVPN
   become: true
@@ -38,3 +38,31 @@
   apt:
     state: latest
     name: network-manager-openvpn-gnome
+
+- name: Install Firefox
+  become: true
+  when: ansible_distribution == "Ubuntu"
+  apt:
+    state: latest
+    name: firefox
+
+- name: Install tmux
+  become: true
+  when: ansible_distribution == "Ubuntu"
+  apt:
+    state: latest
+    name: tmux
+
+- name: Install proxychains
+  become: true
+  when: ansible_distribution == "Ubuntu"
+  apt:
+    state: latest
+    name: proxychains
+
+- name: Install smbclient
+  become: true
+  when: ansible_distribution == "Ubuntu"
+  apt:
+    state: latest
+    name: smbclient
